@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Pa' Carnívoros | Authentic Smokehouse, Steak & Burgers - Bucaramanga</title>
   <meta name="description" content="Pa' Carnívoros en Bucaramanga (Cra. 3 #63-60). Auténtico sabor American Grill & Smokehouse. Burgers maduradas al carbón, cortes a la brasa, papas monstruo y pedidos por WhatsApp.">
   <meta name="theme-color" content="#0c0908">
@@ -233,10 +233,11 @@
   </section>
 
   <!-- ========================================================================
-       MODAL DE PERSONALIZACIÓN DE PRODUCTO
+       MODAL DE PERSONALIZACIÓN DE PRODUCTO (BOTTOM SHEET EN MÓVIL)
        ======================================================================== -->
   <div class="modal-overlay" id="product-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-container">
+      <div class="sheet-pull-handle" aria-hidden="true"></div>
       <div class="modal-header-img" id="modal-img-container">
         <!-- Render dinámico de foto -->
       </div>
@@ -274,10 +275,11 @@
   </div>
 
   <!-- ========================================================================
-       DRAWER DEL CARRITO (SLIDE-OVER)
+       DRAWER DEL CARRITO (BOTTOM SHEET COMPLETO EN MÓVIL)
        ======================================================================== -->
   <div class="cart-drawer-overlay" id="cart-drawer-overlay" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
     <aside class="cart-drawer" aria-label="Tu pedido actual">
+      <div class="sheet-pull-handle" aria-hidden="true"></div>
       <div class="drawer-header">
         <div class="drawer-title" id="drawer-title">
           <img src="logo.jpg" alt="Pa Carnivoros" class="drawer-logo-mini">
@@ -413,6 +415,25 @@
         </button>
       </div>
     </aside>
+  </div>
+
+  <!-- ========================================================================
+       BARRA FLOTANTE DEL CARRITO (STICKY THUMB BAR - MOBILE FIRST)
+       ======================================================================== -->
+  <div class="mobile-sticky-cart-bar" id="mobile-sticky-cart-bar" style="display: none;">
+    <button class="btn-mobile-cart-action btn-open-cart" aria-label="Ver bandeja de pedido">
+      <div class="mobile-cart-left">
+        <span class="mobile-cart-qty-badge" id="mobile-bar-qty">0</span>
+        <div class="mobile-cart-summary">
+          <strong>Ver Bandeja de Pedido</strong>
+          <small id="mobile-bar-items-sub">0 platos listos</small>
+        </div>
+      </div>
+      <div class="mobile-cart-right">
+        <span class="mobile-bar-price" id="mobile-bar-total">$0</span>
+        <span class="mobile-bar-arrow">→</span>
+      </div>
+    </button>
   </div>
 
   <!-- ========================================================================

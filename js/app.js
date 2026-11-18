@@ -1,6 +1,6 @@
 /**
  * Pa' Carnívoros Bucaramanga - American Smokehouse & Grill Controller
- * Fotografías gastronómicas reales, micro-interacciones fluidas y checkout WhatsApp.
+ * Mobile-First: Sticky Thumb Bar, Native Bottom-Sheets & Swipe-to-Dismiss.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -102,6 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnCheckoutWhatsapp = document.getElementById("btn-checkout-whatsapp");
   const cartCountHeaders = document.querySelectorAll(".cart-counter");
 
+  // Barra Flotante Sticky Móvil
+  const mobileStickyBar = document.getElementById("mobile-sticky-cart-bar");
+  const mobileBarQty = document.getElementById("mobile-bar-qty");
+  const mobileBarSub = document.getElementById("mobile-bar-items-sub");
+  const mobileBarTotal = document.getElementById("mobile-bar-total");
+
   // Formulario del carrito DOM
   const orderTypeTabs = document.querySelectorAll(".type-tab");
   const deliveryFields = document.getElementById("delivery-fields");
@@ -179,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return matchesCat && matchesSearch;
     });
 
-    itemsCountBadge.textContent = `${filtered.length} cortes y platos listos`;
+    itemsCountBadge.textContent = `${filtered.length} cortes y platos`;
 
     if (filtered.length === 0) {
       productsContainer.innerHTML = `
@@ -223,7 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }).join("");
 
-    // Botones de acción
     productsContainer.querySelectorAll(".btn-card-action").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -267,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --------------------------------------------------------------------------
-  // 4. MODAL DE PERSONALIZACIÓN
+  // 4. MODAL DE PERSONALIZACIÓN (CON SOPORTE BOTTOM-SHEET)
   // --------------------------------------------------------------------------
   function openCustomizationModal(product) {
     activeModalProduct = product;
@@ -430,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --------------------------------------------------------------------------
-  // 5. CARRITO Y CHECKOUT WHATSAPP
+  // 5. GESTIÓN DEL CARRITO & BOTTOM SHEET
   // --------------------------------------------------------------------------
   function openCartDrawer() {
     cartDrawerOverlay.classList.add("open");
@@ -450,6 +455,27 @@ document.addEventListener("DOMContentLoaded", () => {
   cartDrawerOverlay.addEventListener("click", (e) => {
     if (e.target === cartDrawerOverlay) closeCartDrawer();
   });
+
+  // Soporte touch-swipe down para cerrar bottom sheets en móvil
+  function setupSwipeToDismiss(element, closeFn) {
+    let startY = 0;
+    element.addEventListener("touchstart", (e) => {
+      startY = e.touches[0].clientY;
+    }, { passive: true });
+
+    element.addEventListener("touchmove", (e) => {
+      const currentY = e.touches[0].clientY;
+      if (currentY - startY > 70) {
+        closeFn();
+      }
+    }, { passive: true });
+  }
+
+  const drawerPullHandle = cartDrawerOverlay.querySelector(".sheet-pull-handle");
+  if (drawerPullHandle) setupSwipeToDismiss(drawerPullHandle, closeCartDrawer);
+
+  const modalPullHandle = productModalOverlay.querySelector(".sheet-pull-handle");
+  if (modalPullHandle) setupSwipeToDismiss(modalPullHandle, closeCustomizationModal);
 
   orderTypeTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -585,10 +611,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 350);
   });
 
+  // Suscripción al Carrito con Barra Flotante Móvil
   window.cartManager.subscribe((state) => {
     cartCountHeaders.forEach((el) => {
       el.textContent = state.itemCount;
     });
+
+    // Actualizar Barra Flotante Móvil Sticky
+    if (mobileStickyBar) {
+      if (state.itemCount > 0) {
+        mobileStickyBar.style.display = "block";
+        if (mobileBarQty) mobileBarQty.textContent = state.itemCount;
+        if (mobileBarSub) mobileBarSub.textContent = `${state.itemCount} ${state.itemCount === 1 ? 'plato seleccionado' : 'platos seleccionados'}`;
+        if (mobileBarTotal) mobileBarTotal.textContent = `$${state.total.toLocaleString("es-CO")}`;
+      } else {
+        mobileStickyBar.style.display = "none";
+      }
+    }
 
     if (state.items.length === 0) {
       cartItemsList.innerHTML = "";
