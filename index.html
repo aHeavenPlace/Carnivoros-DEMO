@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pa' Carnívoros | Authentic Smokehouse, Steak & Burgers - Bucaramanga</title>
+  <meta name="description" content="Pa' Carnívoros en Bucaramanga (Cra. 3 #63-60). Auténtico sabor American Grill & Smokehouse. Burgers maduradas al carbón, cortes a la brasa, papas monstruo y pedidos por WhatsApp.">
+  <meta name="theme-color" content="#0c0908">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP MARQUEE TICKER (AMERICAN SMOKEHOUSE BANNER)
+       ======================================================================== -->
+  <div class="grill-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-item">
+        <span>FUEGO & CARBÓN DE ROBLE</span>
+        <span class="star-bullet">★</span>
+        <span>DOMICILIOS EN BUCARAMANGA HASTA LAS 11:30 PM</span>
+        <span class="star-bullet">★</span>
+        <span>100% CARNE ANGUS MADURADA</span>
+        <span class="star-bullet">★</span>
+        <span>SEDE REAL DE MINAS: CRA. 3 #63-60</span>
+        <span class="star-bullet">★</span>
+        <span>SABOR CARNÍVORO SALVAJE</span>
+        <span class="star-bullet">★</span>
+        <span>PEDIDOS DIRECTOS POR WHATSAPP</span>
+      </div>
+      <div class="ticker-item">
+        <span>FUEGO & CARBÓN DE ROBLE</span>
+        <span class="star-bullet">★</span>
+        <span>DOMICILIOS EN BUCARAMANGA HASTA LAS 11:30 PM</span>
+        <span class="star-bullet">★</span>
+        <span>100% CARNE ANGUS MADURADA</span>
+        <span class="star-bullet">★</span>
+        <span>SEDE REAL DE MINAS: CRA. 3 #63-60</span>
+        <span class="star-bullet">★</span>
+        <span>SABOR CARNÍVORO SALVAJE</span>
+        <span class="star-bullet">★</span>
+        <span>PEDIDOS DIRECTOS POR WHATSAPP</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOP HEADER
+       ======================================================================== -->
+  <header class="top-header" role="banner">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <div class="brand-logo-frame">
+          <img src="logo.jpg" alt="Pa' Carnívoros Logo Oficial" class="brand-logo-img">
+        </div>
+        <div class="brand-text">
+          <h1>Pa' Carnívoros</h1>
+          <div class="brand-sub">
+            <span>Bucaramanga, Col</span>
+            <span>•</span>
+            <span class="badge-live" aria-label="Restaurante abierto hoy">
+              <span class="pulse-dot"></span>
+              Abierto · Cierra 11:30 p.m.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn-header-cart btn-open-cart" id="btn-header-cart" aria-label="Ver carrito de compras">
+          <span class="btn-icon" id="cart-icon-header"></span>
+          <span>Mi Pedido</span>
+          <span class="cart-counter" aria-live="polite">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO BANNER - AMERICAN SMOKEHOUSE & GRILL
+       ======================================================================== -->
+  <section class="hero-section" aria-labelledby="hero-title">
+    <div class="hero-embers-canvas"></div>
+    <div class="hero-content">
+      <div class="hero-badge-wrap">
+        <div class="hero-logo-frame">
+          <img src="logo.jpg" alt="Pa' Carnívoros Grill" class="hero-logo-img">
+        </div>
+      </div>
+
+      <div class="hero-stamp-pill">
+        <span id="hero-flame-icon"></span>
+        <span>AUTHENTIC AMERICAN GRILL & SMOKEHOUSE</span>
+      </div>
+
+      <h2 class="hero-title" id="hero-title">
+        Fuego, Brasas & <span class="flame-text">Porciones Brutales</span>
+      </h2>
+      <p class="hero-desc">
+        Hamburguesas con carne Angus madurada sobre carbón de roble, cortes tiernos al grill, papas monstruo rebosantes de queso y costillas ahumadas en leña.
+      </p>
+
+      <div class="hero-meta-bar" role="region" aria-label="Información rápida del establecimiento">
+        <div class="meta-item">
+          <span class="rating-badge" id="hero-star-icon"></span>
+          <span><strong>3.3</strong> (165 reseñas en Google Maps)</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon" id="hero-tag-icon"></span>
+          <span><strong>$20.000 - $40.000</strong> por persona</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon" id="hero-pin-icon"></span>
+          <span><strong>Cra. 3 #63-60</strong> (Real de Minas)</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-icon" id="hero-moto-icon"></span>
+          <span><strong>Local · Para Llevar · Domicilios</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       STICKY CONTROLS: BUSCADOR Y CATEGORÍAS
+       ======================================================================== -->
+  <nav class="controls-sticky" aria-label="Filtros y navegación del catálogo">
+    <div class="controls-inner">
+      <div class="search-box">
+        <label for="search-input">Buscar platos o ingredientes</label>
+        <span class="search-icon" id="search-icon-box"></span>
+        <input type="search" id="search-input" placeholder="Buscar cortes, hamburguesas, tocineta, 2x1..." autocomplete="off">
+      </div>
+
+      <div class="categories-bar" id="categories-bar" role="tablist" aria-label="Categorías del menú">
+        <!-- Render dinámico desde app.js -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       SECCIÓN DEL MENÚ
+       ======================================================================== -->
+  <main class="menu-section" id="menu">
+    <div class="section-header">
+      <h2 class="section-title" id="section-title">La Carta al Fuego</h2>
+      <span class="items-count" id="items-count" aria-live="polite">Cargando platos...</span>
+    </div>
+
+    <div class="products-grid" id="products-grid" role="region" aria-label="Platos del restaurante">
+      <!-- Cards gastronómicas renderizadas dinámicamente con app.js -->
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       SECCIÓN DE UBICACIÓN & LOCAL
+       ======================================================================== -->
+  <section class="location-section" id="ubicacion" aria-labelledby="location-title">
+    <div class="location-container">
+      <div class="location-grid">
+        <div class="location-info">
+          <h2 id="location-title">Vive la Experiencia en el Restaurante</h2>
+          <p>
+            Te esperamos en nuestra sede principal de Bucaramanga para disfrutar del aroma a leña viva, cervezas heladas y el mejor ambiente carnívoro, o pide a domicilio con despacho prioritario.
+          </p>
+
+          <div class="info-cards">
+            <div class="info-pill-row">
+              <div class="info-icon-box" id="loc-pin-icon"></div>
+              <div class="info-text">
+                <strong>Sede Real de Minas / La Ciudadela:</strong>
+                <span>Cra. 3 #63-60, Bucaramanga, Santander</span>
+                <span style="font-size: 0.82rem; color: var(--color-ember); display: block; margin-top: 0.2rem; font-weight: 700;">Código Plus: 3VXF+WG Bucaramanga</span>
+              </div>
+            </div>
+
+            <div class="info-pill-row">
+              <div class="info-icon-box" id="loc-clock-icon"></div>
+              <div class="info-text">
+                <strong>Horario de Parrilla:</strong>
+                <span>Lunes a Domingo: 5:00 p.m. – 11:30 p.m.</span>
+                <span style="font-size: 0.82rem; color: #4ade80; display: block; margin-top: 0.2rem; font-weight: 700;">¡Brasas encendidas y cocina activa!</span>
+              </div>
+            </div>
+
+            <div class="info-pill-row">
+              <div class="info-icon-box" id="loc-moto-icon"></div>
+              <div class="info-text">
+                <strong>Servicio Completo:</strong>
+                <span>Mesas en el local · Retiro en barra (Takeaway) · Domicilios por WhatsApp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=Cra.+3+%2363-60,+Bucaramanga,+Santander" target="_blank" rel="noopener noreferrer" class="btn-maps" aria-label="Abrir cómo llegar en Google Maps">
+              <span id="loc-nav-icon"></span>
+              <span>Cómo llegar en Google Maps</span>
+            </a>
+            <button class="btn-secondary btn-open-cart" aria-label="Hacer pedido para entrega o llevar">
+              <span id="loc-bag-icon"></span>
+              <span>Ordenar al Carbón</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="map-visual-card">
+          <div class="map-header">
+            <div>
+              <strong style="color: #ffffff; font-size: 1.15rem; font-family: var(--font-display); letter-spacing: 0.04em;">Pa' Carnívoros Steak & Burger</strong>
+              <small style="color: var(--color-text-muted); display: block;">Cra. 3 #63-60, Bucaramanga</small>
+            </div>
+            <div class="map-rating-badge">
+              <span id="map-star-icon"></span>
+              <span>3.3 (165)</span>
+            </div>
+          </div>
+
+          <div class="map-graphic" aria-hidden="true">
+            <div class="map-pin">
+              <img src="logo.jpg" alt="Pa' Carnívoros Pin">
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; color: var(--color-text-muted);">
+            <span>Bucaramanga, Santander</span>
+            <span style="color: var(--color-ember); font-weight: 800; text-transform: uppercase;">Cobertura Metropolitana</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MODAL DE PERSONALIZACIÓN DE PRODUCTO
+       ======================================================================== -->
+  <div class="modal-overlay" id="product-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <div class="modal-header-img" id="modal-img-container">
+        <!-- Render dinámico de foto -->
+      </div>
+      <button class="btn-close-modal" id="btn-close-modal" aria-label="Cerrar ventana de personalización"></button>
+
+      <div class="modal-body">
+        <h3 class="modal-title" id="modal-title">Nombre del Producto</h3>
+        <p class="modal-desc" id="modal-desc">Descripción del producto</p>
+
+        <div id="modal-options-body">
+          <!-- Opciones dinámicas de término, salsas, extras -->
+        </div>
+
+        <div class="field-wrapper" style="margin-top: var(--space-md);">
+          <label for="modal-notes" class="field-label">
+            Instrucciones para la parrilla / cocina <span style="color: var(--color-text-dim); font-weight: 400;">(Opcional)</span>
+          </label>
+          <textarea id="modal-notes" class="form-input" rows="2" placeholder="Ej: Término 3/4 bien marcado, tocineta extra crujiente, salsas aparte..."></textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-qty-selector">
+          <button class="btn-qty" id="btn-modal-minus" aria-label="Disminuir cantidad"></button>
+          <span class="qty-display" id="modal-qty" aria-live="polite">1</span>
+          <button class="btn-qty" id="btn-modal-plus" aria-label="Aumentar cantidad"></button>
+        </div>
+
+        <button class="btn-modal-add" id="btn-modal-add">
+          <span>Agregar a la orden</span>
+          <span id="modal-price-total">$0</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       DRAWER DEL CARRITO (SLIDE-OVER)
+       ======================================================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+    <aside class="cart-drawer" aria-label="Tu pedido actual">
+      <div class="drawer-header">
+        <div class="drawer-title" id="drawer-title">
+          <img src="logo.jpg" alt="Pa Carnivoros" class="drawer-logo-mini">
+          <span>Tu Orden Carnívora</span>
+        </div>
+        <button class="btn-close-drawer" id="btn-close-drawer" aria-label="Cerrar pedido"></button>
+      </div>
+
+      <div class="drawer-body">
+        <!-- Modalidad de entrega -->
+        <div>
+          <div class="section-subtitle">¿Cómo recibirás tu pedido?</div>
+          <div class="order-type-tabs" role="tablist">
+            <button class="type-tab active" data-type="delivery" id="tab-delivery" role="tab" aria-selected="true">
+              <span class="tab-icon" id="tab-icon-moto"></span>
+              <span>Domicilio</span>
+            </button>
+            <button class="type-tab" data-type="takeaway" id="tab-takeaway" role="tab" aria-selected="false">
+              <span class="tab-icon" id="tab-icon-takeaway"></span>
+              <span>Para Llevar</span>
+            </button>
+            <button class="type-tab" data-type="dinein" id="tab-dinein" role="tab" aria-selected="false">
+              <span class="tab-icon" id="tab-icon-dinein"></span>
+              <span>En Mesa</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lista de productos -->
+        <div>
+          <div class="section-subtitle">Detalle de Platos</div>
+          <div class="cart-empty-state" id="cart-empty-state">
+            <div class="empty-icon-box" id="empty-cart-icon"></div>
+            <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-bottom: 0.25rem;">Tu bandeja está vacía</h3>
+            <p style="font-size: 0.9rem;">Elige una hamburguesa smash, costillas ahumadas o papas monstruo para empezar.</p>
+          </div>
+          <div id="cart-items-list" style="display: flex; flex-direction: column; gap: var(--space-sm);">
+            <!-- Render dinámico -->
+          </div>
+        </div>
+
+        <!-- Datos del Cliente -->
+        <div class="cart-form-group" style="display: flex; flex-direction: column; gap: var(--space-md);">
+          <div class="section-subtitle">Datos para el Despacho</div>
+          
+          <div class="form-row">
+            <div class="field-wrapper">
+              <label for="customer-name" class="field-label">Nombre del Cliente <span class="req">*</span></label>
+              <input type="text" id="customer-name" class="form-input" placeholder="Ej: Fernando Mantilla" required>
+              <span class="field-error-msg" id="name-error">Ingresa tu nombre</span>
+            </div>
+
+            <div class="field-wrapper">
+              <label for="customer-phone" class="field-label">WhatsApp de Contacto <span class="req">*</span></label>
+              <input type="tel" id="customer-phone" class="form-input" placeholder="Ej: 318 350 1234" required>
+              <span class="field-error-msg" id="phone-error">Ingresa un número válido</span>
+            </div>
+          </div>
+
+          <!-- Campos Domicilio -->
+          <div id="delivery-fields" style="display: flex; flex-direction: column; gap: var(--space-md);">
+            <div class="field-wrapper">
+              <label for="customer-address" class="field-label">Dirección Exacta de Entrega <span class="req">*</span></label>
+              <input type="text" id="customer-address" class="form-input" placeholder="Ej: Cra. 33 #48-120 Torre 1 Apto 502" required>
+              <span class="field-error-msg" id="address-error">Ingresa tu dirección completa</span>
+            </div>
+
+            <div class="field-wrapper">
+              <label for="customer-neighborhood" class="field-label">Barrio o Sector en Bucaramanga</label>
+              <input type="text" id="customer-neighborhood" class="form-input" placeholder="Ej: Real de Minas, Cabecera, Sotomayor...">
+            </div>
+          </div>
+
+          <!-- Campos En Mesa -->
+          <div id="dinein-fields" style="display: none;">
+            <div class="field-wrapper">
+              <label for="customer-table" class="field-label">Número de Mesa en el Restaurante <span class="req">*</span></label>
+              <input type="text" id="customer-table" class="form-input" placeholder="Ej: Mesa 6">
+            </div>
+          </div>
+
+          <div class="field-wrapper">
+            <label for="customer-order-notes" class="field-label">Notas Adicionales de Entrega</label>
+            <textarea id="customer-order-notes" class="form-input" rows="2" placeholder="Ej: Avisar en portería, llevar datáfono..."></textarea>
+          </div>
+        </div>
+
+        <!-- Método de Pago -->
+        <div>
+          <div class="section-subtitle">Forma de Pago</div>
+          <div class="payment-methods-grid">
+            <button class="payment-card-btn active" data-method="nequi" id="pay-btn-nequi">
+              <span class="pay-icon" id="pay-icon-nequi"></span>
+              <span>Nequi / Daviplata</span>
+            </button>
+            <button class="payment-card-btn" data-method="efectivo" id="pay-btn-cash">
+              <span class="pay-icon" id="pay-icon-cash"></span>
+              <span>Efectivo</span>
+            </button>
+            <button class="payment-card-btn" data-method="datafono" id="pay-btn-card">
+              <span class="pay-icon" id="pay-icon-card"></span>
+              <span>Datáfono</span>
+            </button>
+          </div>
+
+          <div id="cash-amount-wrapper" style="display: none; margin-top: var(--space-xs);">
+            <div class="field-wrapper">
+              <label for="customer-cash" class="field-label">¿Con cuánto efectivo cancelas? (Para enviarte cambio)</label>
+              <input type="number" id="customer-cash" class="form-input" placeholder="Ej: 50000">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Resumen y Botón WhatsApp -->
+      <div class="drawer-footer">
+        <div class="summary-row">
+          <span>Subtotal de platos:</span>
+          <strong id="cart-subtotal">$0</strong>
+        </div>
+        <div class="summary-row" id="cart-delivery-row">
+          <span>Envío a domicilio:</span>
+          <span id="cart-delivery-fee">$5.000</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Total a Pagar:</span>
+          <span class="total-amount" id="cart-total">$0</span>
+        </div>
+
+        <button class="btn-whatsapp-checkout" id="btn-checkout-whatsapp" disabled aria-label="Enviar pedido a WhatsApp de Pa Carnivoros">
+          <span id="wa-checkout-icon"></span>
+          <span>Despachar Orden por WhatsApp</span>
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ========================================================================
+       BARRA INFERIOR MÓVIL
+       ======================================================================== -->
+  <nav class="mobile-nav-bar" aria-label="Navegación móvil">
+    <a href="#menu" class="mobile-nav-btn active" id="mob-nav-menu">
+      <span class="icon" id="mob-icon-menu"></span>
+      <span>La Carta</span>
+    </a>
+    <a href="#ubicacion" class="mobile-nav-btn" id="mob-nav-loc">
+      <span class="icon" id="mob-icon-loc"></span>
+      <span>Ubicación</span>
+    </a>
+    <button class="mobile-nav-btn btn-open-cart" id="mob-nav-cart" style="position: relative;" aria-label="Abrir carrito de compras">
+      <span class="icon" id="mob-icon-cart"></span>
+      <span>Bandeja</span>
+      <span class="mobile-cart-badge cart-counter">0</span>
+    </button>
+    <a href="https://wa.me/573183501234" target="_blank" rel="noopener noreferrer" class="mobile-nav-btn" id="mob-nav-wa" aria-label="Contactar por WhatsApp">
+      <span class="icon" id="mob-icon-wa"></span>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <!-- ========================================================================
+       TOAST CONTAINER
+       ======================================================================== -->
+  <div class="toast-container" id="toast-container" role="status" aria-live="polite"></div>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-logo-frame">
+      <img src="logo.jpg" alt="Pa' Carnívoros" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div class="footer-brand">Pa' Carnívoros Bucaramanga</div>
+    <p>Cra. 3 #63-60, Bucaramanga, Santander • Sede Real de Minas</p>
+    <div class="footer-links">
+      <a href="#menu">La Carta al Fuego</a>
+      <a href="#ubicacion">Cómo Llegar</a>
+      <a href="https://wa.me/573183501234" target="_blank" rel="noopener noreferrer">Línea Directa WhatsApp</a>
+    </div>
+    <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.8rem;">
+      © 2026 Pa' Carnívoros. Auténtico Smokehouse & American Grill en Bucaramanga.
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/icons.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
