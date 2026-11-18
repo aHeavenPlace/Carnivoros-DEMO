@@ -239,17 +239,22 @@ img, svg {
   font-weight: 600;
 }
 
+.mobile-header-status-bar {
+  display: none; /* Oculto en PC / Desktop */
+}
+
 .badge-live {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   color: #4ade80;
   background: rgba(34, 197, 94, 0.12);
   border: 1px solid rgba(74, 222, 128, 0.3);
-  padding: 0.15rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   border-radius: var(--radius-full);
+  white-space: nowrap; /* Evita que el texto rompa líneas dentro del óvalo */
 }
 
 .pulse-dot {
@@ -1749,27 +1754,73 @@ img, svg {
     display: flex;
   }
 
-  /* Header móvil compacto */
+  /* Header móvil compacto con distribución en 2 filas limpias */
   .header-container {
-    padding: 8px 12px;
+    padding: 10px 14px 8px;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .brand-wrapper {
+    flex: 1;
+    min-width: 0;
+    gap: 10px;
   }
 
   .brand-logo-frame {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
   }
 
   .brand-text h1 {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .brand-sub-desktop {
+    display: none !important; /* Ocultar versión comprimida de PC */
+  }
+
+  /* Fila 2 de estado y ciudad para celulares: amplia, equilibrada y sin solapamiento */
+  .mobile-header-status-bar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 7px;
+    margin-top: 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mob-status-city {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .mobile-header-status-bar .badge-live {
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    background: rgba(34, 197, 94, 0.16);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+    color: #4ade80;
+    flex-shrink: 0;
   }
 
   .btn-header-cart {
-    padding: 0.4rem 0.85rem;
-    font-size: 0.82rem;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.85rem;
+    min-height: 38px;
+    flex-shrink: 0;
   }
 
-  /* Hero móvil compacto (evita scrollear 3 pantallas para ver comida) */
+  /* Hero móvil compacto */
   .hero-section {
     padding: 1.25rem 1rem 1.25rem;
   }
@@ -1796,15 +1847,26 @@ img, svg {
     margin-bottom: 0.85rem;
   }
 
+  /* Distribución de la barra meta del Hero en cuadrícula 2x2 en celulares */
   .hero-meta-bar {
-    gap: 0.4rem 0.85rem;
-    padding: 0.6rem 0.85rem;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+    padding: 10px 14px;
+    width: 100%;
     font-size: 0.8rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero-meta-bar .meta-item {
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 0.78rem;
   }
 
   /* Sticky controls en móvil */
   .controls-sticky {
-    top: 54px;
+    top: 92px;
     padding: 8px 12px;
   }
 
